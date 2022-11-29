@@ -230,7 +230,7 @@ The Dockerfile and associated scripts and documentation in this project are rele
 This was originally created by [@gofrolist](https://github.com/gofrolist) and adapted by [@pedigreetechnologies](https://github.com/pedigreetechnologies) for internal use.
 
 [license]: LICENSE
-[docker_pulls_counter]: https://img.shields.io/docker/pulls/pedigreetechnologies/molecule
-[docker_hub_repo]: https://hub.docker.com/r/pedigreetechnologies/molecule
+[docker_pulls_counter]: https://img.shields.io/docker/pulls/pedigreetechnologies/github-action-molecule
+[docker_hub_repo]: https://hub.docker.com/r/pedigreetechnologies/github-action-molecule
 [semantic_release_svg]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic_release_repo]: https://github.com/semantic-release/semantic-release
