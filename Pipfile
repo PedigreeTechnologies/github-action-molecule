@@ -10,7 +10,8 @@ ansible-core = "==2.12.8"
 ansible = "==5.10.0"
 ansible-lint = "==6.8.6"
 docker = "==6.0.1"
-molecule = {extras = [ "lint", "docker" ], version = "4.0.3"}
+molecule = {extras = [ "lint", "docker", "test" ], version = "4.0.3"}
+molecule-inspec = "==1.1"
 
 [dev-packages]
 
