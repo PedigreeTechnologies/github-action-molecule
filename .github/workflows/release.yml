@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_IMAGE_NAME: gofrolist/molecule
+  DOCKER_IMAGE_NAME: pedigreetechnologies/molecule
 
 jobs:
   build:
