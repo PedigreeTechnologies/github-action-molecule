@@ -1,7 +1,8 @@
 # Molecule for GitHub Action
-[![Docker Pulls](https://img.shields.io/docker/pulls/gofrolist/molecule)](https://hub.docker.com/r/gofrolist/molecule)
-[![License](https://img.shields.io/github/license/gofrolist/molecule-action)](LICENSE)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
+[![Docker Pulls][docker_pulls_counter]][docker_hub_repo]
+[![License](https://img.shields.io/github/license/pedigreetechnologies/github-action-molecule)][license]
+[![semantic-release][semantic_release_svg]][semantic_release_repo]
 
 This GitHub action allows you to run [Molecule](https://molecule.readthedocs.io/en/stable/) to test [Ansible](https://www.ansible.com/) role.
 
@@ -65,9 +66,10 @@ This GitHub action allows you to run [Molecule](https://molecule.readthedocs.io/
 ```
 
 ## Usage
+
 To use the action simply create an `main.yml` (or choose custom `*.yml` name) in the `.github/workflows/` directory.
 
-### Basic example:
+### Basic example
 
 ```yaml
 on: push
@@ -79,14 +81,14 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: "${{ github.repository }}"
-      - uses: gofrolist/molecule-action@v2
+      - uses: pedigreetechnologies/github-action-molecule@v2
 ```
 
 >NOTE: By default molecule is going to look for configuration at `molecule/*/molecule.yml`, so if option `molecule-working-dir` is not provided,
 >checkout action needs to place the file in ${{ github.repository }} in order for Molecule to find your role. If your role is placed somewhere else
 >in the repository, ensure that `molecule-working-dir` is set up accordingly, in order to `cd` to that directory before issuing `molecule` command.
 
-### Advanced example:
+### Advanced example
 
 ```yaml
 name: Molecule
@@ -117,7 +119,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: Molecule
-        uses: gofrolist/molecule-action@v2
+        uses: pedigreetechnologies/github-action-molecule@v2
         with:
           molecule_options: --debug --base-config molecule/_shared/base.yml
           molecule_command: test
@@ -126,14 +128,18 @@ jobs:
           ANSIBLE_FORCE_COLOR: '1'
 ```
 
-> TIP: N.B. Use `gofrolist/molecule-action@v2` or any other valid tag, or branch, or commit SHA instead of `v2` to pin the action to use a specific version.
+> TIP: N.B. Use `pedigreetechnologies/github-action-molecule@v2` or any other valid tag, or branch, or commit SHA instead of `v2` to pin the action to use a specific version.
 
 ## Troubleshooting
+
 If you see this error while you executing `apt_key` task
-```
+
+```python
 FAILED! => {"changed": false, "msg": "Failed to find required executable gpg in paths: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"}
 ```
+
 That means your docker image require some python modules `gpg` and you can install them in molecule prepare step or embed it in your dockerfile.
+
 ```yaml
 ---
 - name: Prepare
@@ -148,10 +154,13 @@ That means your docker image require some python modules `gpg` and you can insta
 ```
 
 If you see this error while you executing `pip` task
-```
+
+```python
 FAILED! => {"changed": false, "msg": "No package matching 'python-pip' is available"}
 ```
+
 That means your docker image is missing `pip` and you can install them in molecule prepare step or embed it in your dockerfile.
+
 ```yaml
 ---
 - name: Prepare
@@ -168,7 +177,7 @@ That means your docker image is missing `pip` and you can install them in molecu
 If you are trying to install any Python packages in order to run your Molecule
 tests such as the OpenStack SDK and getting errors such as this:
 
-```
+```python
 fatal: [localhost]: FAILED! => {"changed": false, "msg": "openstacksdk is required for this module"}
 ```
 
@@ -210,7 +219,18 @@ git tag -fa v2 -m "Update v2 tag" && git push origin v2 --force
 ```
 
 **Reference**:
-https://github.com/actions/toolkit/blob/master/docs/action-versioning.md#recommendations
+<https://github.com/actions/toolkit/blob/master/docs/action-versioning.md#recommendations>
 
 ## License
-The Dockerfile and associated scripts and documentation in this project are released under the [MIT](license).
+
+The Dockerfile and associated scripts and documentation in this project are released under the [MIT](license) license.
+
+## Credits
+
+This was originally created by [@gofrolist](https://github.com/gofrolist) and adapted by [@pedigreetechnologies](https://github.com/pedigreetechnologies) for internal use.
+
+[license]: LICENSE
+[docker_pulls_counter]: https://img.shields.io/docker/pulls/pedigreetechnologies/github-action-molecule
+[docker_hub_repo]: https://hub.docker.com/r/pedigreetechnologies/github-action-molecule
+[semantic_release_svg]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic_release_repo]: https://github.com/semantic-release/semantic-release

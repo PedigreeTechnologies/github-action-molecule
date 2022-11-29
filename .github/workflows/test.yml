@@ -9,7 +9,7 @@ on:
       - '.github/dependabot.yml'
 
 env:
-  DOCKER_IMAGE_NAME: gofrolist/molecule
+  DOCKER_IMAGE_NAME: pedigreetechnologies/github-action-molecule
 
 jobs:
   build:
@@ -39,7 +39,7 @@ jobs:
           ${{ env.DOCKER_IMAGE_NAME }}:test \
           sh -c "\
             molecule --version \
-            && molecule init role --driver-name docker gofrolist.validate && cd validate \
-            && sed -i 's/gofrolist.//g' molecule/default/converge.yml \
+            && molecule init role --driver-name docker pedigreetechnologies.validate && cd validate \
+            && sed -i 's/pedigreetechnologies.//g' molecule/default/converge.yml \
             && molecule test \
           "
