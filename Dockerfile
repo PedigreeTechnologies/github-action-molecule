@@ -13,7 +13,7 @@ ARG BUILD_DEPS="\
 
 RUN apk add --update --no-cache ${BUILD_DEPS}
 
-COPY Pipfile* .
+COPY Pipfile* ./
 RUN pip install pipenv && \
     pipenv install --deploy --system
 

@@ -14,7 +14,7 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y ${BUILD_DEPS} && \
     rm -rf /var/lib/apt/lists/*
 
-COPY Pipfile* .
+COPY Pipfile* ./
 RUN pip install --no-cache-dir pipenv && \
     pipenv install --deploy --system
 
