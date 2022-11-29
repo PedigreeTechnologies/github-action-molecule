@@ -19,7 +19,7 @@ RUN pip install pipenv && \
 
 FROM python:3.10.8-alpine3.16 AS runtime
 
-LABEL "maintainer"="Pedigree Technologies"
+LABEL "maintainer"="Pedigree Technologies <https://pedigreetechnologies.com>"
 LABEL "repository"="https://github.com/pedigreetechnologies/github-action-molecule"
 LABEL "com.github.actions.name"="molecule"
 LABEL "com.github.actions.description"="Run Ansible Molecule"
