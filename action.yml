@@ -65,7 +65,7 @@ inputs:
 
 runs:
   using: docker
-  image: docker://pedigreetechnologies/molecule:v2
+  image: docker://pedigreetechnologies/github-action-molecule:v2
   env:
     ANSIBLE_ASYNC_DIR: "/tmp/.ansible_async"
     ANSIBLE_FORCE_COLOR: "1"
