@@ -227,7 +227,7 @@ The Dockerfile and associated scripts and documentation in this project are rele
 
 ## Credits
 
-This was originally created by [@gofrolist](https://github.com/gofrolist) and adapted by [Pedigree Technologies](https://github.com/pedigreetechnologies) for internal use.
+This was originally created by [@gofrolist](https://github.com/gofrolist) and adapted by [@pedigreetechnologies](https://github.com/pedigreetechnologies) for internal use.
 
 [license]: LICENSE
 [docker_pulls_counter]: https://img.shields.io/docker/pulls/pedigreetechnologies/molecule
