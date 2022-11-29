@@ -223,7 +223,7 @@ git tag -fa v2 -m "Update v2 tag" && git push origin v2 --force
 
 ## License
 
-The Dockerfile and associated scripts and documentation in this project are released under the [MIT](license).
+The Dockerfile and associated scripts and documentation in this project are released under the [MIT](license) license.
 
 ## Credits
 
