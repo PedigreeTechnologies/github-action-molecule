@@ -9,7 +9,7 @@ on:
       - '.github/dependabot.yml'
 
 env:
-  DOCKER_IMAGE_NAME: pedigreetechnologies/molecule
+  DOCKER_IMAGE_NAME: pedigreetechnologies/github-action-molecule
 
 jobs:
   build:
