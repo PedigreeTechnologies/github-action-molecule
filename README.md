@@ -1,7 +1,7 @@
 # Molecule for GitHub Action
 
 [![Docker Pulls][docker_pulls_counter]][docker_hub_repo]
-[![License](https://img.shields.io/github/license/pedigreetechnologies/molecule-action)][license]
+[![License](https://img.shields.io/github/license/pedigreetechnologies/github-action-molecule)][license]
 [![semantic-release][semantic_release_svg]][semantic_release_repo]
 
 This GitHub action allows you to run [Molecule](https://molecule.readthedocs.io/en/stable/) to test [Ansible](https://www.ansible.com/) role.
@@ -81,7 +81,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: "${{ github.repository }}"
-      - uses: pedigreetechnologies/molecule-action@v2
+      - uses: pedigreetechnologies/github-action-molecule@v2
 ```
 
 >NOTE: By default molecule is going to look for configuration at `molecule/*/molecule.yml`, so if option `molecule-working-dir` is not provided,
@@ -119,7 +119,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: Molecule
-        uses: pedigreetechnologies/molecule-action@v2
+        uses: pedigreetechnologies/github-action-molecule@v2
         with:
           molecule_options: --debug --base-config molecule/_shared/base.yml
           molecule_command: test
@@ -128,13 +128,13 @@ jobs:
           ANSIBLE_FORCE_COLOR: '1'
 ```
 
-> TIP: N.B. Use `pedigreetechnologies/molecule-action@v2` or any other valid tag, or branch, or commit SHA instead of `v2` to pin the action to use a specific version.
+> TIP: N.B. Use `pedigreetechnologies/github-action-molecule@v2` or any other valid tag, or branch, or commit SHA instead of `v2` to pin the action to use a specific version.
 
 ## Troubleshooting
 
 If you see this error while you executing `apt_key` task
 
-```ansible
+```python
 FAILED! => {"changed": false, "msg": "Failed to find required executable gpg in paths: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"}
 ```
 
@@ -155,7 +155,7 @@ That means your docker image require some python modules `gpg` and you can insta
 
 If you see this error while you executing `pip` task
 
-```ansible
+```python
 FAILED! => {"changed": false, "msg": "No package matching 'python-pip' is available"}
 ```
 
@@ -177,7 +177,7 @@ That means your docker image is missing `pip` and you can install them in molecu
 If you are trying to install any Python packages in order to run your Molecule
 tests such as the OpenStack SDK and getting errors such as this:
 
-```ansible
+```python
 fatal: [localhost]: FAILED! => {"changed": false, "msg": "openstacksdk is required for this module"}
 ```
 
