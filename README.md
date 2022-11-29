@@ -1,6 +1,6 @@
 # Molecule for GitHub Action
-[![Docker Pulls](https://img.shields.io/docker/pulls/gofrolist/molecule)](https://hub.docker.com/r/gofrolist/molecule)
-[![License](https://img.shields.io/github/license/gofrolist/molecule-action)](LICENSE)
+[![Docker Pulls](https://img.shields.io/docker/pulls/pedigreetechnologies/molecule)](https://hub.docker.com/r/pedigreetechnologies/molecule)
+[![License](https://img.shields.io/github/license/pedigreetechnologies/molecule-action)](LICENSE)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 This GitHub action allows you to run [Molecule](https://molecule.readthedocs.io/en/stable/) to test [Ansible](https://www.ansible.com/) role.
@@ -79,7 +79,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: "${{ github.repository }}"
-      - uses: gofrolist/molecule-action@v2
+      - uses: pedigreetechnologies/molecule-action@v2
 ```
 
 >NOTE: By default molecule is going to look for configuration at `molecule/*/molecule.yml`, so if option `molecule-working-dir` is not provided,
@@ -117,7 +117,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: Molecule
-        uses: gofrolist/molecule-action@v2
+        uses: pedigreetechnologies/molecule-action@v2
         with:
           molecule_options: --debug --base-config molecule/_shared/base.yml
           molecule_command: test
@@ -126,7 +126,7 @@ jobs:
           ANSIBLE_FORCE_COLOR: '1'
 ```
 
-> TIP: N.B. Use `gofrolist/molecule-action@v2` or any other valid tag, or branch, or commit SHA instead of `v2` to pin the action to use a specific version.
+> TIP: N.B. Use `pedigreetechnologies/molecule-action@v2` or any other valid tag, or branch, or commit SHA instead of `v2` to pin the action to use a specific version.
 
 ## Troubleshooting
 If you see this error while you executing `apt_key` task
