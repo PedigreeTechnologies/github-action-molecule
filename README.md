@@ -1,10 +1,25 @@
-# Molecule for GitHub Action
+# Ansible Molecule (Static)
 
 [![Docker Pulls][docker_pulls_counter]][docker_hub_repo]
 [![License](https://img.shields.io/github/license/pedigreetechnologies/github-action-molecule)][license]
 [![semantic-release][semantic_release_svg]][semantic_release_repo]
 
-This GitHub action allows you to run [Molecule](https://molecule.readthedocs.io/en/stable/) to test [Ansible](https://www.ansible.com/) role.
+This GitHub Action is a fork of [Ansible Molecule](https://github.com/marketplace/actions/ansible-molecule) and was modified to use a specific combination of Ansible software versions. Credit for the original work goes to [@gofrolist](https://github.com/gofrolist).
+
+This GitHub Action allows you to run [Molecule](https://molecule.readthedocs.io/en/stable/) to test [Ansible](https://www.ansible.com/) roles/playbooks. This Action runs Ansible Molecule using specific versions of `ansible`, `ansible-core`, `ansible-lint`, `molecule`, etc. All the software and specific versions (not including dependencies) are as follows:
+  
+  ```python
+    "setuptools>=59.6.0"
+    "wheel>=0.37.1"
+    "ansible-core==2.12.8"
+    "ansible==5.10.0"
+    "ansible-lint==6.8.6"
+    "docker==6.0.1"
+    "molecule==4.0.3"
+    "molecule-inspec==1.1"
+  ```
+
+  This is useful when the development and testing of ansible roles/playbooks is done on a static version of Ansible software, and upgrades to new versions of Ansible software is done anually/semi-annually or on an as-needed basis.
 
 ## Inputs
 
@@ -128,7 +143,7 @@ jobs:
           ANSIBLE_FORCE_COLOR: '1'
 ```
 
-> TIP: N.B. Use `pedigreetechnologies/github-action-molecule@v2` or any other valid tag, or branch, or commit SHA instead of `v2` to pin the action to use a specific version.
+> TIP: N.B. Use `pedigreetechnologies/github-action-molecule@v1` or any other valid tag, or branch, or commit SHA instead of `v2` to pin the action to use a specific version.
 
 ## Troubleshooting
 
