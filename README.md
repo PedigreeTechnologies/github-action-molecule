@@ -96,7 +96,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: "${{ github.repository }}"
-      - uses: pedigreetechnologies/github-action-molecule@v2
+      - uses: pedigreetechnologies/github-action-molecule@v1
 ```
 
 >NOTE: By default molecule is going to look for configuration at `molecule/*/molecule.yml`, so if option `molecule-working-dir` is not provided,
@@ -134,7 +134,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: Molecule
-        uses: pedigreetechnologies/github-action-molecule@v2
+        uses: pedigreetechnologies/github-action-molecule@v1
         with:
           molecule_options: --debug --base-config molecule/_shared/base.yml
           molecule_command: test
